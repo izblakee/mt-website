@@ -8,10 +8,30 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url(https://i.pinimg.com/736x/84/2a/79/842a793921d7f60542525fae231c93bd.jpghttps://i.pinimg.com/736x/84/2a/79/842a793921d7f60542525fae231c93bd.jpg) no-repeat center;
-      background-size: cover;
       text-align: center;
       color: white;
+    }
+
+    /* 🎬 视频背景 */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* 🔥 黑色遮罩（让字更清楚） */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: -1;
     }
 
     .container {
@@ -62,7 +82,7 @@
       transform: scale(1.1);
     }
 
-    /* 🔥 플랑 (scroll + fixed) */
+    /* 🔥 플랑 */
     .footer-banner {
       position: fixed;
       bottom: 0;
@@ -96,6 +116,14 @@
 </head>
 
 <body>
+
+<!-- 🎬 视频 -->
+<video autoplay muted loop id="bg-video">
+  <source src="Videos2026-03-25_183329_028.mp4" type="video/mp4">
+</video>
+
+<!-- 🔥 遮罩 -->
+<div class="overlay"></div>
 
 <div class="container">
   <h1 class="title">🔥 MT 모집 🔥</h1>
