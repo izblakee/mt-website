@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>MT 홍보</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url(https://i.pinimg.com/736x/11/01/db/1101db710eebcb6badf9755f126db50c.jpg) no-repeat center;
+      background-size: cover;
+      text-align: center;
+      color: white;
+    }
+
+    .container {
+      padding: 40px;
+    }
+
+    .title {
+      font-size: 60px;
+      font-weight: bold;
+      margin-top: 50px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    #countdown {
+      font-size: 28px;
+      margin-top: 10px;
+      color: rgb(76, 0, 255);
+    }
+
+    .card {
+      background: white;
+      color: black;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 20px;
+      width: 300px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 25px;
+      background: red;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: darkred;
+      transform: scale(1.1);
+    }
+
+    /* 🔥 플랑 (scroll + fixed) */
+    .footer-banner {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 50px;
+      background: rgba(0, 0, 0, 0.85);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .scroll-text {
+      white-space: nowrap;
+      color: yellow;
+      font-weight: bold;
+      font-size: 18px;
+      padding-left: 100%;
+      animation: scroll 12s linear infinite;
+    }
+
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1 class="title">🔥 MT 모집 🔥</h1>
+  <p class="subtitle">안 오면 100% 후회 🤑</p>
+  <h2 id="countdown"></h2>
+
+  <div class="card">
+    <h2>📅 일정</h2>
+    <p>2026년 4월 3일 ~ 4월 4일</p>
+  </div>
+
+  <div class="card">
+    <h2>📍 장소</h2>
+    <p>포항</p>
+  </div>
+
+  <div class="card">
+    <h2>💰 비용</h2>
+    <p>40,000원</p>
+  </div>
+
+  <a href="#" class="btn">👉 바로참여</a>
+</div>
+
+<!-- 🔥 플랑 -->
+<div class="footer-banner">
+  <div class="scroll-text">
+    🔥 백마는 영어부터 🔥 안 오면 후회 🔥 지금 신청 안 하면 끝 🔥
+  </div>
+</div>
+
+<script>
+const targetDate = new Date("2026-04-03").getTime();
+
+setInterval(function() {
+  const now = new Date().getTime();
+  const diff = targetDate - now;
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+  document.getElementById("countdown").innerHTML =
+    "🚨 마감까지 D-" + days + " (" + hours + "시간)";
+}, 1000);
+</script>
+
+</body>
+</html>
